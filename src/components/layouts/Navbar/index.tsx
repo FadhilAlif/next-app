@@ -2,6 +2,7 @@ import { signIn, signOut, useSession } from "next-auth/react";
 import styles from "./Navbar.module.css";
 import Script from "next/script";
 import Image from "next/image";
+import Link from "next/link";
 
 const Navbar = () => {
   const { data }: any = useSession();
@@ -15,6 +16,12 @@ const Navbar = () => {
         strategy="afterInteractive"
       >{`document.getElementById("title").innerHTML = "Navbar"`}</Script>
       <div className="flex items-center">
+        <Link
+          href={"/product"}
+          className="text-white font-semibold py-1 px-2 mr-3 underline decoration-2 decoration-slate-300 hover:text-slate-300"
+        >
+          Our Product
+        </Link>
         <span className="text-white font-bold flex items-center gap-4 mr-4">
           {data?.user?.name}
           {""}
