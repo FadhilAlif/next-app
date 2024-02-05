@@ -7,7 +7,7 @@ import { useState } from "react";
 
 const LoginViews = () => {
   const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState<string>("");
+  const [error, setError] = useState("");
   const { push } = useRouter();
   const { query } = useRouter();
 
