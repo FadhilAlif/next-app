@@ -4,11 +4,13 @@ import { redirect } from "next/dist/server/api-utils";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useState } from "react";
+import { query as queryType } from "next/router";
 
 const LoginViews = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState([]);
   const { push } = useRouter();
+  const { query } = useRouter();
 
   const callbackUrl: any = query.callbackUrl || "/";
   const handleSubmit = async (e: any) => {
