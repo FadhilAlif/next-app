@@ -4,7 +4,7 @@ import { redirect } from "next/dist/server/api-utils";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useState } from "react";
-import { query as queryType } from "next/router";
+// import { query as queryType } from "next/router";
 
 const LoginViews = () => {
   const [isLoading, setIsLoading] = useState(false);
