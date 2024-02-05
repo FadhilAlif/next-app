@@ -4,11 +4,11 @@ import { useState } from "react";
 
 const RegisterViews = () => {
   const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState([]);
+  const [error, setError] = useState("");
   const { push } = useRouter();
   const handleSubmit = async (e: any) => {
     e.preventDefault();
-    setError([]);
+    setError("");
     setIsLoading(true);
     const data = {
       fullname: e.target.fullname.value,
