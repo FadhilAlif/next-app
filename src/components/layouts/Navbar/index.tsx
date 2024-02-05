@@ -15,14 +15,20 @@ const Navbar = () => {
         id="onclick-title"
         strategy="afterInteractive"
       >{`document.getElementById("title").innerHTML = "Navbar"`}</Script>
-      <div className="flex items-center">
+      <div className="flex items-center gap-4">
+        <Link
+          href={"/about"}
+          className="text-white font-semibold underline decoration-2 decoration-slate-300 hover:text-slate-300"
+        >
+          About
+        </Link>
         <Link
           href={"/product"}
-          className="text-white font-semibold py-1 px-2 mr-3 underline decoration-2 decoration-slate-300 hover:text-slate-300"
+          className="text-white font-semibold underline decoration-2 decoration-slate-300 hover:text-slate-300"
         >
           Our Product
         </Link>
-        <span className="text-white font-bold flex items-center gap-4 mr-4">
+        <div className="text-white font-bold flex items-center">
           {data?.user?.name}
           {""}
           {data?.user?.image && (
@@ -31,10 +37,11 @@ const Navbar = () => {
               alt={data.user.name}
               width={100}
               height={100}
-              className="w-10 rounded-full"
+              className="ml-2 w-10 rounded-full"
             />
           )}
-        </span>
+          <div></div>
+        </div>
         {data ? (
           <button
             onClick={() => signOut()}
