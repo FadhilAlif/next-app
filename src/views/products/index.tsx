@@ -1,4 +1,5 @@
 import { productType } from "@/types/product.type";
+import Image from "next/image";
 import Link from "next/link";
 
 const ProductViews = ({ products }: { products: productType[] }) => {
@@ -14,7 +15,13 @@ const ProductViews = ({ products }: { products: productType[] }) => {
             className="w-1/3 p-5"
           >
             <div className="w-full mb-3 hover:scale-105 duration-300">
-              <img src={product.image} alt={product.name} />
+              {/* <img src={product.image} alt={product.name} /> */}
+              <Image
+                src={product.image}
+                alt={product.name}
+                width={550}
+                height={550}
+              />
             </div>
             <h4 className="font-bold">{product.name}</h4>
             <p className="font-medium text-slate-500">{product.category}</p>
